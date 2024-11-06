@@ -58,7 +58,7 @@
 /*
  ============================================================================================================
  +
- + Databse Query: Select System Settings Entry
+ + Databse Management System Server :: Database Query: Select System Settings Entry
  +
  ============================================================================================================
 */
@@ -80,7 +80,6 @@ $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_DIRECTORY_LANGU
 $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_STATUS_OFFLINE_MODE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_offline_mode'];
 $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_WEBSITE_TITLE					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_website_title'];
 $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_AUDIO				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_file_extension_audio'];
-$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_DIRECTORY_THEME				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_directory_theme'];
 $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER_AUDIO		= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_private_member_audio'];
 $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER_DOCUMENT		= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_private_member_document'];
 $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER_IMAGE		= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_private_member_image'];
@@ -145,7 +144,6 @@ $_Application_Module_Administration_Settings_POST_UPDATE_STATUS_OFFLINE_MODE				
 $_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE						= $_POST['AMA_Settings_Update_Site_Title'];
 $_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_SMILEYS					= $_POST['AMA_Settings_Update_Directory_Smileys'];
 $_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION					= $_POST['AMA_Settings_Update_Sound_Extension'];
-$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_THEME					= $_POST['AMA_Settings_Update_Directory_Theme'];
 $_Application_Module_Administration_Settings_POST_UPDATE_REGISTRATION_ACCOUNT_AGE_REQUIREMENT			= $_POST['AMA_Settings_Update_Registration_Account_Age_Requirement'];
 $_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_MEMBER_AUDIO			= $_POST['AMA_Settings_Update_Upload_Size_Private_Member_Audio'];
 $_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_MEMBER_DOCUMENT			= $_POST['AMA_Settings_Update_Upload_Size_Private_Member_Document'];
@@ -408,7 +406,7 @@ echo ("
 													
 															Services :: Module :: Status :: Tasks<BR>
 															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_SERVICES_MODULE_STATUS_TASKS ]<BR>
-																<SELECT NAME=\"AMA_Settings_Update_Directory_Services_Module_Tasks\">
+																<SELECT NAME=\"AMA_Settings_Update_Status_Services_Module_Tasks\">
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																</SELECT><BR>
@@ -467,44 +465,6 @@ echo ("
 																<INPUT TYPE=\"text\" NAME=\"AMA_Settings_Update_Site_Title\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_WEBSITE_TITLE\" MAXLENGTH=\"250\"><BR>
 													Options Note: <I>This Option can be changed to display any Web Site Title as shown in the top of the Web Browser.</I><BR><BR>
 
-															System :: Default Theme Directory<BR>
-																<SELECT NAME=\"AMA_Settings_Update_Directory_Theme\">
-");
-
-/*
- ============================================================================================================
- + Update :: Default System Theme Directory
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_Settings_FIND_THEME_DIRECTORY						= "./Theme/";
-$_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY						= opendir($_Application_Module_Administration_Settings_FIND_THEME_DIRECTORY);
-
-while (($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY = readdir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY))) {
-
-if ($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == ".." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "index.php" || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "Global") {
-/**
- * Do Nothing
-**/
-} else {
-
-																	echo ("<OPTION VALUE=\"$_Application_Module_Administration_Settings_READ_THEME_DIRECTORY\">$_Application_Module_Administration_Settings_READ_THEME_DIRECTORY</OPTION>");
-
-} // [ + ] IF: Theme Directory IS NOT Specified Files AND Directory
-
-} // [ + ] WHILE: Reading Specified Theme Directory And Files
-
-/*
- ============================================================================================================
- + Close :: Directory: System Theme Directory
- ============================================================================================================
-*/
-
-closedir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY);
-
-echo ("
-																</SELECT><BR>
-													Options Note: <I>This Option can be changed to force a custom default Graphical-User-Interface Theme.</I><BR><BR>
 																
 														<HR>System :: Settings :: Registered Member Account<HR>
 														
@@ -632,7 +592,6 @@ settings_system_status_offline_mode='$_Application_Module_Administration_Setting
 settings_system_file_extension_audio='$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION',
 settings_system_file_extension_image='$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION',
 settings_system_directory_language='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_LANGUAGE',
-settings_system_directory_theme='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_THEME',
 settings_system_website_title='$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE',
 settings_system_upload_size_private_member_audio='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_MEMBER_AUDIO',
 settings_system_upload_size_private_member_document='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_MEMBER_DOCUMENT',
