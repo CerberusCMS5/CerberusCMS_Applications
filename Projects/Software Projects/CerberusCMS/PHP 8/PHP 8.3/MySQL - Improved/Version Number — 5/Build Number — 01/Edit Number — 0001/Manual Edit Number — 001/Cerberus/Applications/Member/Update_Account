@@ -114,7 +114,8 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_IMAGE_PICTURE						= $_Ap
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_LANGUAGE					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_language'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_NEWSLETTER					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_newsletter'];
-$_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_THEME_DIRECTORY					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_theme_directory'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_DIRECTORY_THEME					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_directory_theme'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION		= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_directory_theme_video_resolution'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_encryption_pgp'];
 
 /*
@@ -617,7 +618,8 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MOOD					=
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MUSIC					= $_POST['AMM_Update_Account_Member_Music'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_AUDIO				= $_POST['AMM_Update_Account_Member_Settings_Audio'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_NEWSLETTER			= $_POST['AMM_Update_Account_Member_Settings_Newsletter'];
-$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_THEME				= $_POST['AMM_Update_Account_Member_Settings_Theme'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_DIRECTORY_THEME			= $_POST['AMM_Update_Account_Member_Settings_Directory_Theme'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION	= $_POST['AMM_Update_Account_Member_Settings_Directory_Theme_Video_Resolution'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_LANGUAGE				= $_POST['AMM_Update_Account_Member_Settings_Language'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_ENCRYPTION_PGP			= $_POST['AMM_Update_Account_Member_Settings_Encryption_PGP'];
 
@@ -861,7 +863,7 @@ echo ("
 															<INPUT TYPE=\"text\" NAME=\"AMM_Update_Account_Member_Location_Given_Region\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_LOCATION_GIVEN_REGION\" MAXLENGTH=\"250\"><BR><BR>
 
 														* Location :: Given :: Time-Zone:<BR>
-														<A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Time-Zone Map Image ::\" TARGET=\"_NEW\"></A>
+														<A HREF=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Time-Zone Map Image ::\" TARGET=\"_NEW\"></A>
 															
 															<SELECT NAME=\"AMM_Update_Account_Member_Location_Given_Timezone\">
 																<OPTION VALUE=\"-12:00\">(GMT -12:00) Eniwetok, Kwajalein</OPTION>
@@ -1163,7 +1165,7 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Member_Update_Account_FIND_DIRECTORY_MEMBER_IMAGE_AVATAR					= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/";
+$_Application_Module_Member_Update_Account_FIND_DIRECTORY_MEMBER_IMAGE_AVATAR					= "./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon_Avatar/";
 $_Application_Module_Member_Update_Account_OPEN_DIRECTORY_MEMBER_IMAGE_AVATAR					= opendir($_Application_Module_Member_Update_Account_FIND_DIRECTORY_MEMBER_IMAGE_AVATAR);
 
 while (($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY = readdir($_Application_Module_Member_Update_Account_OPEN_DIRECTORY_MEMBER_IMAGE_AVATAR))) {
@@ -1304,7 +1306,7 @@ echo ("
 
 													<B>Settings :: Account :: Graphics :: Theme</B><BR>
 														* Member Account Theme:<BR>
-															<SELECT NAME=\"AMM_Update_Account_Member_Settings_Theme\" VALUE=\"$_GLOBAL_MEMBER_THEME_DIRECTORY\" MAXLENGTH=\"50\">
+															<SELECT NAME=\"AMM_Update_Account_Member_Settings_Directory_Theme\" VALUE=\"$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME\" MAXLENGTH=\"50\">
 ");
 
 /*
@@ -1313,7 +1315,7 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Member_Update_Account_FIND_DIRECTORY_THEME							= "./Theme/";
+$_Application_Module_Member_Update_Account_FIND_DIRECTORY_THEME							= "./Theme/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION";
 $_Application_Module_Member_Update_Account_OPEN_DIRECTORY_THEME							= opendir($_Application_Module_Member_Update_Account_FIND_DIRECTORY_THEME);
 
 while (($_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY = readdir($_Application_Module_Member_Update_Account_OPEN_DIRECTORY_THEME))) {
@@ -1339,6 +1341,25 @@ if ($_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == "." || $_
 closedir($_Application_Module_Member_Update_Account_OPEN_DIRECTORY_THEME);
 
 echo ("
+														</SELECT><BR><BR>
+
+													<B>Settings :: Account :: Graphics :: Theme :: Video Resolution</B><BR>
+														* Member Account Theme :: Video Resolution:<BR>
+															<SELECT NAME=\"AMM_Update_Account_Member_Settings_Directory_Theme_Video_Resolution\" VALUE=\"$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION\" MAXLENGTH=\"50\">
+															<OPTION VALUE=\"144PI\">Progressive / Interlaced: 144</OPTION>
+															<OPTION VALUE=\"240PI\">Progressive / Interlaced: 240</OPTION>
+															<OPTION VALUE=\"340PI\">Progressive / Interlaced: 340</OPTION>
+															<OPTION VALUE=\"480PI\">Progressive / Interlaced: 480</OPTION>
+															<OPTION VALUE=\"520PI\">Progressive / Interlaced: 520</OPTION>
+															<OPTION VALUE=\"640PI\">Progressive / Interlaced: 640</OPTION>
+															<OPTION VALUE=\"720PI\">Progressive / Interlaced: 720</OPTION>
+															<OPTION VALUE=\"1080PI\">Progressive / Interlaced: 1080</OPTION>
+															<OPTION VALUE=\"2040PI\">Progressive / Interlaced: 2040</OPTION>
+															<OPTION VALUE=\"2140PI\">Progressive / Interlaced: 2140</OPTION>
+															<OPTION VALUE=\"4K\">Progressive / Interlaced: 4K</OPTION>
+															<OPTION VALUE=\"8K\">Progressive / Interlaced: 8K</OPTION>
+															<OPTION VALUE=\"16K\">Progressive / Interlaced: 16K</OPTION>
+															<OPTION VALUE=\"32K\">Progressive / Interlaced: 32K</OPTION>
 														</SELECT><BR><BR>
 
 												<B>Personal :: Physical :: Biometrics</B><HR><BR>
@@ -1560,10 +1581,11 @@ member_security_custom_password_panel='$_Application_Module_Member_Update_Accoun
 member_security_pgp_key_panel_private='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PRIVATE',
 member_security_pgp_key_panel_public='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PUBLIC',
 member_settings_control_panel_audio='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_AUDIO',
+member_settings_directory_theme='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_DIRECTORY_THEME',
+member_settings_directory_theme_video_resolution='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION',
 member_settings_encryption_pgp='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_ENCRYPTION_PGP',
 member_settings_language='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_LANGUAGE',
 member_settings_newsletter='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_NEWSLETTER',
-member_settings_theme_directory='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_THEME',
 member_settings_visibility_profile_activity='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTING_VISIBILITY_ACTIVITY',
 member_settings_visibility_profile_authentication='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTING_VISIBILITY_AUTHENTICATION',
 member_settings_visibility_profile_contact='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTING_VISIBILITY_CONTACT',

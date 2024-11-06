@@ -431,18 +431,21 @@ if ($_GLOBAL_SETTING_SYSTEM_SECURITY_SETTING_STATUS_CACHE_CIRCUMVENTION != "1") 
 if ($_GET["Display"] == "Options") {
 
 echo ("
+<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 <B>System :: Settings</B>
 <HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;System&amp;Display&#61;Settings&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Internal Application :: System :: Settings ::\">System :: Settings</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;System&amp;Display&#61;Time&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Internal Application :: System :: Settings :: Date and Time ::\">System :: Settings :: Date and Time</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;System&amp;Display&#61;Plug-Ins&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Internal Application :: System :: Settings :: Plug-Ins ::\">System :: Settings :: Plug-Ins</A><BR><BR>
 
+<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 <B>System :: Information</B>
 <HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;System&amp;Display&#61;Networking&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Internal Application :: System :: Information :: Networking Information ::\">System :: Information :: Network Information</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;System&amp;Display&#61;Software&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Internal Application :: System :: Information :: Software Information ::\">System :: Information :: Software Information</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;System&amp;Display&#61;Statistics&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Internal Application :: System :: Information :: Statistics :: System-Wide :: \">System :: Information :: Statistics :: System-Wide</A><BR><BR>
 
+<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 <B>System :: Internal Documents</B>
 <HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 * <A HREF=\"./About.txt?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Internal Document :: About ::\">About</A><BR>
@@ -473,27 +476,43 @@ echo ("
 if ($_GET["Display"] == "Statistics") {
 
 echo ("
-											<B>System Statistical Information</B><HR>
-												*&nbsp;Project Installation Date: $_Application_Module_Member_System_LIST_INSTALLATION_DATE<BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\">
+											<B>System Statistical Information</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\"><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Web Application Project Information</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+												*&nbsp;Web Application Project Installation Date: $_Application_Module_Member_System_LIST_INSTALLATION_DATE<BR>
 												*&nbsp;Total Number of :: Web-Page Document Executions :: Unique: $_Application_Module_Member_System_LIST_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_UNIQUE<BR>
 												*&nbsp;Total Number of :: Web-Page Document Executions :: Non-Unique: $_Application_Module_Member_System_LIST_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_NON_UNIQUE<BR><BR>
 
-											<B>System-Wide Social Interaction Information & Statistics</B><HR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\">
+											<B>System-Wide Social Interaction Information & Statistics</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\"><BR>
 
-											<B>System-Wide :: Forum Information & Statistics</B><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>System-Wide :: Forum Information & Statistics</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 												*&nbsp;Total Number of Forums: $_Application_Module_Member_System_DB_Query_SELECT_ALL_FORUM_NUMBER_OF_ROWS<BR>
 												*&nbsp;Total Number of Forum' Topics: $_Application_Module_Member_System_DB_Query_SELECT_ALL_FORUM_NUMBER_OF_ROWS_TOPICS<BR>
 												*&nbsp;Total Number of Forum' Topic' Messages: $_Application_Module_Member_System_DB_Query_SELECT_ALL_FORUM_NUMBER_OF_ROWS_TOPIC_MESSAGES<BR><BR>
 
-											<B>System-Wide :: Commentation Information & Statistics</B><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>System-Wide :: Commentation Information & Statistics</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 												*&nbsp;Total Number of Comments: $_Application_Module_Member_System_DB_Query_SELECT_ALL_COMMENTS_NUMBER_OF_ROWS<BR><BR>
 
-											<B>System-Wide :: Registered Member Accounts Information & Statistics</B><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>System-Wide :: Registered Member Accounts Information & Statistics</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 												*&nbsp;Total Number of Registered Member Accounts: $_Application_Module_Member_System_DB_Query_SELECT_ALL_MEMBERS_NUMBER_OF_ROWS<BR>
 												*&nbsp;Total Number of Registered Member Accounts :: Currently Active: $_Application_Module_Member_System_DB_Query_SELECT_ALL_MEMBERS_NUMBER_OF_ROWS_ACTIVE<BR>
 												*&nbsp;Total Number of Registered Member Accounts :: Currently Inactive: $_Application_Module_Member_System_DB_Query_SELECT_ALL_MEMBERS_NUMBER_OF_ROWS_INACTIVE<BR><BR>
 
-											<B>System-Wide :: File System Information & Statistics</B><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>System-Wide :: File System Information & Statistics</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 												*&nbsp;Total Number of Files Within The File System: $_Application_Module_Member_System_DB_Query_SELECT_ALL_FILES_NUMBER_OF_ROWS<BR><BR>
 ");
 
@@ -527,7 +546,7 @@ echo ("
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 												*&nbsp;System :: Theme :: File Format :: Audio: $_GLOBAL_SYSTEM_SOUND_EXTENSION<BR>
 												*&nbsp;System :: Theme :: File Format :: Image: $_GLOBAL_SYSTEM_IMAGE_EXTENSION<BR>
-												*&nbsp;System :: Theme :: Directory: $_GLOBAL_SYSTEM_THEME_DIRECTORY
+												*&nbsp;System :: Theme :: Directory: $_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME
 
 												<BR><BR>
 												Application Module Note: <I>These options set the parameters of the Graphical User Interface Theme Packs that are used by this web application software. The parameters could be: Audio File Format, Image File Format, Theme Directory and more.</I><BR><BR>
@@ -713,92 +732,126 @@ echo ("
 
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 											<B>Settings :: System :: Plug-Ins :: Hardware Devices</B>
-										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\"><BR>
 
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Audio/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_AUDIO/Audio.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Audio ::\" TARGET=\"_NEW\">Audio</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Audio :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_AUDIO<BR>
 												*&nbsp;Plug-In :: Audio :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_AUDIO | $_Application_Module_Member_System_PlugIn_Status_Audio<BR>
 											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Devices&amp;Display&#61;Options&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Application :: Devices ::\">Device :: Hardware :: Testing :: Audio</A><BR><BR>
 
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Camera/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_CAMERA/Camera.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Camera ::\" TARGET=\"_NEW\">Camera</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Camera :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_CAMERA<BR>
 												*&nbsp;Plug-In :: Camera :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_CAMERA | $_Application_Module_Member_System_PlugIn_Status_Camera<BR>
 											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Devices&amp;Display&#61;Options&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Application :: Devices ::\">Device :: Hardware :: Testing :: Camera</A><BR><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Microphone/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_MICROPHONE/Microphone.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Microphone ::\" TARGET=\"_NEW\">Microphone</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Microphone/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_MICROPHONE/Microphone.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Microphone ::\" TARGET=\"_NEW\">Microphone</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Microphone :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_MICROPHONE<BR>
 												*&nbsp;Plug-In :: Microphone :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_MICROPHONE | $_Application_Module_Member_System_PlugIn_Status_Location<BR>
 											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Devices&amp;Display&#61;Options&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Application :: Devices ::\">Device :: Hardware :: Testing :: Microphone</A><BR><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Location/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_LOCATION/Location.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Location ::\" TARGET=\"_NEW\">Location</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Location/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_LOCATION/Location.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Location ::\" TARGET=\"_NEW\">Location</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Location :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_LOCATION<BR>
 												*&nbsp;Plug-In :: Location :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_LOCATION | $_Application_Module_Member_System_PlugIn_Status_Location<BR><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Notifications/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_NOTIFICATIONS/Notifications.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Notifications ::\" TARGET=\"_NEW\">Notifications</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Notifications/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_NOTIFICATIONS/Notifications.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Notifications ::\" TARGET=\"_NEW\">Notifications</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Notifications :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_NOTIFICATIONS<BR>
 												*&nbsp;Plug-In :: Notifications :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_NOTIFICATIONS | $_Application_Module_Member_System_PlugIn_Status_Notifications<BR><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Video/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_VIDEO/Video.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Video ::\" TARGET=\"_NEW\">Video</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Video/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_VIDEO/Video.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Video ::\" TARGET=\"_NEW\">Video</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Video :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_VIDEO<BR>
 												*&nbsp;Plug-In :: Video :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_VIDEO | $_Application_Module_Member_System_PlugIn_Status_VIDEO<BR>
 											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Devices&amp;Display&#61;Options&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Application :: Devices ::\">Device :: Hardware :: Testing :: Video</A><BR><BR>
 
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 											<B>Settings :: System :: Plug-Ins :: Data Processing</B>
-										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\"><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Encryption/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_ENCRYPTION/Encryption.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Encryption ::\" TARGET=\"_NEW\">Encryption</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Encryption/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_ENCRYPTION/Encryption.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Encryption ::\" TARGET=\"_NEW\">Encryption</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Encryption :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_ENCRYPTION<BR>
 												*&nbsp;Plug-In :: Encryption :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_ENCRYPTION | $_Application_Module_Member_System_PlugIn_Status_EncryptionL<BR><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Safe-HTML/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_SAFEHTML/Safe-HTML.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Safe-HTML ::\" TARGET=\"_NEW\">Safe-HTML</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Safe-HTML/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_SAFEHTML/Safe-HTML.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Safe-HTML ::\" TARGET=\"_NEW\">Safe-HTML</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Safe-HTML :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_SAFEHTML<BR>
 												*&nbsp;Plug-In :: Safe-HTML :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_SAFEHTML | $_Application_Module_Member_System_PlugIn_Status_SafeHTML<BR><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Text-Editor/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_TEXT_EDITOR/Text-Editor.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Text-Editor ::\" TARGET=\"_NEW\">Text-Editor</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Text-Editor/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_TEXT_EDITOR/Text-Editor.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Text-Editor ::\" TARGET=\"_NEW\">Text-Editor</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Text-Editor :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_TEXT_EDITOR<BR>
 												*&nbsp;Plug-In :: Text-Editor :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_TEXT_EDITOR | $_Application_Module_Member_System_PlugIn_Status_Text_Editor<BR><BR>
 
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
-											<B>Settings :: System :: Plug-Ins ::</B> Data Sanitization
-										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Settings :: System :: Plug-Ins :: Data Sanitization</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\"><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Secure-Delete/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_SECURE_DELETE/Secure-Delete.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Secure-Delete ::\" TARGET=\"_NEW\">Secure-Delete</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Secure-Delete/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_SECURE_DELETE/Secure-Delete.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Secure-Delete ::\" TARGET=\"_NEW\">Secure-Delete</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Secure-Delete :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_SECURE_DELETE<BR>
 												*&nbsp;Plug-In :: Secure-Delete :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_SECURE_DELETE | $_Application_Module_Member_System_PlugIn_Status_Secure_Delete<BR><BR>
 
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 											<B>Settings :: System :: Plug-Ins :: Date and Time</B>
-										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\"><BR>
 
-											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Time/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_TIME/Time.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Time ::\" TARGET=\"_NEW\">Time</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Settings :: System :: Plug-Ins ::</B> <A HREF=\"./System/Plug-Ins/Time/$_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_TIME/Time.$_INTERNAL_FILE_EXTENSION\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Plug-In Application Module :: Time ::\" TARGET=\"_NEW\">Time</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Time :: Directory: $_GLOBAL_SYSTEM_PLUGIN_DIRECTORY_TIME<BR>
 												*&nbsp;Plug-In :: Time :: Status: $_GLOBAL_SYSTEM_PLUGIN_STATUS_TIME | $_Application_Module_Member_System_PlugIn_Status_Time<BR><BR>
 
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 											<B>Settings :: System :: Plug-Ins :: Terminal and Console</B>
-										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\"><BR>
 
-											<B>System :: Settings :: Plug-Ins :: Graphical</B><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>System :: Settings :: Plug-Ins :: Graphical</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;Plug-In :: Smileys and Emojis :: Directory: $_GLOBAL_SYSTEM_SMILEYS_DIRECTORY<BR><BR>
 
 										<HR ALIGN=\"LEFT\" WIDTH=\"40%\">
 											<B>System Services</B>
-										<HR ALIGN=\"LEFT\" WIDTH=\"40%\">
+										<HR ALIGN=\"LEFT\" WIDTH=\"40%\"><BR>
 
-											System :: Settings :: Services :: <A HREF=\"./System/Services/Commander\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Commander ::\" TARGET=\"_NEW\">Commander</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											System :: Settings :: Services :: <A HREF=\"./System/Services/Commander\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Commander ::\" TARGET=\"_NEW\">Commander</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;System :: Services :: Status :: Commander: $_GLOBAL_SETTING_SYSTEM_SERVICES_MODULE_STATUS_COMMANDER | $_Application_Module_Member_System_System_Services_Status_Commander<BR><BR>
 
-											System :: Settings :: Services :: <A HREF=\"./System/Services/Integrity\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Integrity ::\" TARGET=\"_NEW\">Integrity</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											System :: Settings :: Services :: <A HREF=\"./System/Services/Integrity\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Integrity ::\" TARGET=\"_NEW\">Integrity</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;System :: Services :: Status :: Integrity: $_GLOBAL_SETTING_SYSTEM_SERVICES_MODULE_STATUS_INTEGRITY | $_Application_Module_Member_System_System_Services_Status_Integrity<BR><BR>
 
-											System :: Settings :: Services :: <A HREF=\"./System/Services/Loops\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Loops ::\" TARGET=\"_NEW\">Loops</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											System :: Settings :: Services :: <A HREF=\"./System/Services/Loops\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Loops ::\" TARGET=\"_NEW\">Loops</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;System :: Services :: Status :: Loops: $_GLOBAL_SETTING_SYSTEM_SERVICES_MODULE_STATUS_LOOPS | $_Application_Module_Member_System_System_Services_Status_Loops<BR><BR>
 
-											System :: Settings :: Services :: <A HREF=\"./System/Services/Services\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Services ::\" TARGET=\"_NEW\">Services</A><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											System :: Settings :: Services :: <A HREF=\"./System/Services/Services\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Services ::\" TARGET=\"_NEW\">Services</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;System :: Services :: Status: Services: $_GLOBAL_SETTING_SYSTEM_SERVICES_MODULE_STATUS_SERVICES | $_Application_Module_Member_System_System_Services_Status_Services<BR><BR>
-												
-											System :: Settings :: Services :: <A HREF=\"./System/Services/Tasks\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Tasks ::\" TARGET=\"_NEW\">Tasks</A><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											System :: Settings :: Services :: <A HREF=\"./System/Services/Tasks\" TITLE=\":: Open & Display :: The Source Programming Code :: For :: The System Application Module :: Tasks ::\" TARGET=\"_NEW\">Tasks</A>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
 												*&nbsp;System :: Services :: Status: Tasks: $_GLOBAL_SETTING_SYSTEM_SERVICES_MODULE_STATUS_TASKS | $_Application_Module_Member_System_System_Services_Status_Tasks<BR><BR>
 
 										<HR ALIGN=\"LEFT\" WIDTH=\"40%\">
@@ -828,35 +881,75 @@ if ($_GET["Display"] == "Networking") {
 
 echo ("
 
-											<B>Network Connection and Web Server Information</B><HR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\">
+											<B>Networking Connection and Web Server Information</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\"><BR>
 
-											<B>Visitor' :: Network :: Connection Information</B><BR>
-												*&nbsp;Visitor' :: Network :: Server Request Method :: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
-												*&nbsp;Visitor' :: Network :: Server Request Time :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
-												*&nbsp;Visitor' :: Network :: Server Connection Type :: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR>
-												*&nbsp;Visitor' :: Network :: Internet Protocol Address :: <A HREF=\"$_SYSTEM_SERVER_NETWORKING_RESOLVER_WHOIS/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display :: The :: Who-Is Information :: For :: Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS :: \" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
-												*&nbsp;Visitor' :: Network :: Internet Protocol Address :: Connecting Port Number :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
-												*&nbsp;Visitor' :: Network :: Web-Browser :: User-Agent :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY<BR>
-												*&nbsp;Visitor' :: Location :: Global-Positioning-System :: Coordinates :: X, Y, Z ::
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Networking :: Connected Device :: Connection Information</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+												*&nbsp;Network :: Connected Device :: Server Request Method :: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
+												*&nbsp;Network :: Connected Device :: Server Request Time :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Network :: Connected Device :: Server Connection Type :: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR>
+												*&nbsp;Network :: Connected Device :: Internet Protocol Address :: <A HREF=\"$_SYSTEM_SERVER_NETWORKING_RESOLVER_WHOIS/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display :: The :: Who-Is Information :: For :: Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS :: \" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+												*&nbsp;Network :: Connected Device :: Internet Protocol Address :: Connecting Port Number :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
+												*&nbsp;Network :: Connected Device :: Web-Browser :: User-Agent :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY<BR>
+												*&nbsp;Network :: Connected Device :: Location :: Global-Positioning-System :: Coordinates :: X, Y, Z ::
 												&nbsp;<A ID=\"getLocationOutputLatitude\" TITLE=\":: Global-Positioning-System :: Coordinates :: Latitude ::\"></A>,
 												<A ID=\"getLocationOutputLongitude\" TITLE=\":: Global-Positioning-System :: Coordinates ::: Longitude ::\"></A>
 												&nbsp;With Altitude Above Sea-Level:&nbsp;<A ID=\"getLocationOutputAltitude\" TITLE=\":: Global-Positioning-System :: Coordinates :: Altitude ::\"></A>
 												&nbsp;<SPAN ID=\"OutputLocation\"></SPAN><BR><BR>
 
-											<B>Local Web Server :: Information</B><BR>
-												*&nbsp;This Web Server :: Hyper-Text-Transfer-Protocol Host :: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
-												*&nbsp;This Web Server :: Gateway Interface :: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
-												*&nbsp;This Web Server :: Address :: <A HREF=\"$_SYSTEM_SERVER_NETWORKING_RESOLVER_WHOIS/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TITLE=\":: Open & Display :: The :: Who-Is Information :: For :: Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\" TARGET=\"_NEW\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
-												*&nbsp;This Web Server :: Address :: Connecting Port Number: $_GLOBAL_LOCAL_SERVER_PORT<BR>
-												*&nbsp;This Web Server :: Software :: $_GLOBAL_LOCAL_SERVER_SOFTWARE<BR>
-												*&nbsp;This Web Server :: Request Time :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
-												*&nbsp;This Web Server :: Request Time ( Float ) :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT<BR>
-												*&nbsp;This Web Server :: Document Root :: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT<BR>
-												*&nbsp;This Web Server :: Hyper-Text-Transfer-Protocol Accept Type :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT<BR>
-												*&nbsp;This Web Server :: Hyper-Text-Transfer-Protocol Character Set :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
-												*&nbsp;This Web Server :: Hyper-Text-Transfer-Protocol Encoding :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
-												*&nbsp;This Web Server :: Hyper-Text-Transfer-Protocol Loading Type :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
-												*&nbsp;This Web Server :: Hyper-Text-Transfer-Protocol Language :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Networking :: This Web Server :: Information</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\"><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Networking :: This Web Server :: Information :: Hyper-Text-Transfer-Protocol</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Host :: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Accept Type :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Character Set :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Encoding :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Loading Type :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Language :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Connection Type :: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Host :: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: Referrer :: $_GLOBAL_LOCAL_SERVER_HTTP_REFERRER<BR>
+												*&nbsp;Network :: This Web Server :: Hyper-Text-Transfer-Protocol :: User-Agent :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT<BR><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Networking :: This Web Server :: Information :: Gateway</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+												*&nbsp;Network :: This Web Server :: Gateway Interface :: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Networking :: This Web Server :: Information :: Address</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+												*&nbsp;Network :: This Web Server :: Address :: <A HREF=\"$_SYSTEM_SERVER_NETWORKING_RESOLVER_WHOIS/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TITLE=\":: Open & Display :: The :: Who-Is Information :: For :: Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\" TARGET=\"_NEW\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
+												*&nbsp;Network :: This Web Server :: Address :: Connecting Port Number: $_GLOBAL_LOCAL_SERVER_PORT<BR><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Networking :: This Web Server :: Information :: Identity</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+												*&nbsp;Network :: This Web Server :: Name :: $_GLOBAL_LOCAL_SERVER_NAME<BR>
+												*&nbsp;Network :: This Web Server :: Protocol :: $_GLOBAL_LOCAL_SERVER_PROTOCOL<BR>
+												*&nbsp;Network :: This Web Server :: Software :: $_GLOBAL_LOCAL_SERVER_SOFTWARE<BR>
+												*&nbsp;Network :: This Web Server :: Signature :: $_GLOBAL_LOCAL_SERVER_SIGNATURE<BR><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Networking :: This Web Server :: Information :: Request</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+												*&nbsp;Network :: This Web Server :: Request :: Time :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Network :: This Web Server :: Request :: Time ( Float ) :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT<BR>
+												*&nbsp;Network :: This Web Server :: Request :: Method :: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR><BR>
+
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+											<B>Networking :: This Web Server :: Information :: Document</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"20%\">
+												*&nbsp;Network :: This Web Server :: Document Root :: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT<BR>
+												*&nbsp;Network :: This Web Server :: Directory :: Current :: $_GLOBAL_LOCAL_SERVER_DIRECTORY_CURRENT<BR>
+												*&nbsp;Network :: This Web Server :: Directory :: File :: Current :: $_GLOBAL_LOCAL_SERVER_DIRECTORY_FILE_CURRENT<BR>
 ");
 
 } // [ + ] IF: Internal Application: Display :: Networking :: Is: Activated
@@ -915,7 +1008,6 @@ echo ("
 												*&nbsp;This Web Server :: Time :: In Unix-Epoch :: Months: $_GLOBAL_LOCAL_SERVER_TIME_UNIX_MONTHS<BR>
 												*&nbsp;This Web Server :: Time :: In Unix-Epoch :: Years: ~ $_GLOBAL_LOCAL_SERVER_TIME_UNIX_YEARS<BR><BR>
 
-
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 												<B>Server :: This Web Server :: Time :: Unix-Epoch :: Manually Programmed</B>
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
@@ -940,7 +1032,6 @@ echo ("
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 												<B>Server :: Connected Device</B>
 										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
-
 												<B><A HREF=\"https://en.Wikipedia.org/wiki/Gregorian_calendar\" TITLE=\":: Open & Display :: The :: Official Wikipedia Article Entry :: For :: Gregorian Calendar ::\" TARGET=\"_NEW\">Gregorian Calendar</A> :: Non-Leap Year</B><BR>
 												*&nbsp;Number of Seconds In 365 Days With 24 Hours In Each Day: 60 Seconds * 60 Minutes * 24 Hours * 365 Days = 31,536,000 Seconds<BR>
 												*&nbsp;Number of Minutes In 365 Days With 24 Hours In Each Day: 60 Minutes * 24 Hours * 365 Days = 31,536,000 Minutes<BR>
@@ -948,7 +1039,13 @@ echo ("
 												*&nbsp;Number of Days In 365 Days With 24 Hours In Each Day: 365 Days / 1 = 365 Days<BR>
 												*&nbsp;Number of Weeks In 365 Days With 24 Hours In Each Day: 365 / 7 = 52.1428571429 Weeks<BR><BR>
 
-												<B>Celestial</B><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+												<B>Celestial</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+													<VIDEO WIDTH=\"325\" HEIGHT=\"240\" CONTROLS>
+														<SOURCE SRC=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/Global/Video/Applications/System/Celestial.mp4\" TYPE=\"video/mp4\">
+													</VIDEO> 
+
 ");
 												
 } // [ + ] IF: Internal Application: Display :: DateTime :: Is: Activated
@@ -964,21 +1061,30 @@ echo ("
 if ($_GET["Display"] == "Software") {
 
 echo ("
-											<B>Web Server Software Technologies</B><HR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\">
+											<B>Web Server Software Technologies</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"50%\"><BR>
 
-											<B>Hyper-Text-Transfer-Protocol Engine Information :: General</B><BR>
-											*&nbsp;Apache Hyper-Text-Transfer-Protocol Engine, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION<BR><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Hyper-Text-Transfer-Protocol Engine :: General</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											*&nbsp;Hyper-Text-Transfer-Protocol Engine :: Type:  $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION<BR>
+											*&nbsp;Hyper-Text-Transfer-Protocol Engine :: Version Number: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION<BR><BR>
 
-											<B>Hyper-Text-Transfer-Protocol Engine Information :: Apache</B><BR>
-											*&nbsp;Apache Hyper-Text-Transfer-Protocol Engine, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_APACHE<BR><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Database Management System Server Database Engine</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											*&nbsp;Database Management System Server Database :: Type: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_MYSQL<BR>
+											*&nbsp;Database Management System Server Database :: Version Number: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_MYSQL<BR><BR>
 
-											<B>My-Structured-Query-Language Engine Information</B><BR>
-											*&nbsp;My-Structured-Query-Language Engine Version Number, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_MYSQL<BR><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Operating System Environment</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											*&nbsp;Operating System Environment: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_OPERATING_SYSTEM<BR><BR>
 
-											<B>Operating System Environment Information</B><BR>
-											*&nbsp;Operating System Environment, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_OPERATING_SYSTEM<BR><BR>
-
-											<B>Pre-Hyper-Text-Post-Processor Engine Information</B><BR>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+											<B>Pre-Hyper-Text-Post-Processor Engine</B>
+										<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
 											*&nbsp;Pre-Hyper-Text-Post-Processor :: Parser Engine :: Version Number :: Configuration File :: $_ACCESS_PHP_ENGINE_VERSION<BR>
 											*&nbsp;Pre-Hyper-Text-Post-Processor :: Parser Engine :: Version Number :: Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_PHP<BR>
 											*&nbsp;Pre-Hyper-Text-Post-Processor :: Zend Engine :: Version Number, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_PHP_ZEND<BR><BR>

@@ -123,7 +123,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO							= $_Applicatio
 
 $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_LANGUAGE						= $_Application_Module_Member_Profile_DB_Query_SELECT_ALL_MEMBER_ACCOUNT_ENTRIES_Fetch_Array['member_settings_language'];
 $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER						= $_Application_Module_Member_Profile_DB_Query_SELECT_ALL_MEMBER_ACCOUNT_ENTRIES_Fetch_Array['member_settings_newsletter'];
-$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_THEME_DIRECTORY					= $_Application_Module_Member_Profile_DB_Query_SELECT_ALL_MEMBER_ACCOUNT_ENTRIES_Fetch_Array['member_settings_theme_directory'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_DIRECTORY_THEME					= $_Application_Module_Member_Profile_DB_Query_SELECT_ALL_MEMBER_ACCOUNT_ENTRIES_Fetch_Array['member_settings_directory_theme'];
 $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP						= $_Application_Module_Member_Profile_DB_Query_SELECT_ALL_MEMBER_ACCOUNT_ENTRIES_Fetch_Array['member_settings_encryption_pgp'];
 
 /*
@@ -677,7 +677,7 @@ $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY					= "./Membe
 
 if ($_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_PICTURE == "") {
 
-	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY	 			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY	 			= "./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
 
 } // [ + ] IF: Registered Member Account :: Image :: Profile Image Is Empty
 
@@ -689,7 +689,7 @@ if ($_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_PICTURE == "") {
 
 if (!file_exists($_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY)) {
 
-	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY 				= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY 				= "./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
 
 } // [ + ] IF: Registered Member Account :: Image :: Profile Image Does Not Exist
 
@@ -703,7 +703,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DISPLAY					= "./Mem
 
 if ($_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO == "") {
 
-	$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DISPLAY	 			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Video/Icon/No_Image.mp4";
+	$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DISPLAY	 			= "./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Video/Icon/No_Image.mp4";
 
 } // [ + ] IF: Registered Member Account :: Image :: Video Profile Image Is Empty
 
@@ -715,7 +715,7 @@ if ($_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO == "") {
 
 if (!file_exists($_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DISPLAY)) {
 
-	$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DISPLAY 				= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Video/Icon/No_Image.mp4";
+	$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DISPLAY 				= "./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Video/Icon/No_Image.mp4";
 
 } // [ + ] IF: Registered Member Account :: Image :: Video Profile Image Does Not Exist
 
@@ -727,7 +727,7 @@ if (!file_exists($_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DIS
 
 if ($_Application_Module_Member_Profile_LIST_MEMBER_USERNAME == "Services") {
 
-	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY 				= "./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Icon_Services/Profile.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY 				= "./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME/Image/Icon_Services/Profile.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
 
 } // [ + ] IF: Registered Member Account :: UserName :: Is: Services
 
@@ -967,12 +967,16 @@ echo ("
 													<A HREF=\"$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display This Registered Member Account Image ::\"><IMG SRC=\"$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST :: $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" ALT=\":: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST :: $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" CLASS=\"MemberProfile\" WIDTH=\"120\" HEIGHT=\"120\"></A>
 													&nbsp;&nbsp;&nbsp;
 													<VIDEO ID=\"StreamVideo\" WIDTH=\"125\" HEIGHT=\"125\" CONTROLS=\"CONTROLS\" TYPE=\"VIDEO/MP4\" AUTOSTART=\"FALSE\" PRELOAD=\"NONE\"><SOURCE SRC=\"$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_VIDEO_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_VIDEO_RANDOM_STRING_GENERATION\"></VIDEO><BR><BR>
-													
-													$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_ABOUT
-												<HR>
-													Forum and Comment Signature:<BR>
-													$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_SIGNATURE
-												<HR>
+
+												<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+													<B>Registered Member Account :: Profile About</B>
+												<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+													$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_ABOUT<BR><BR>
+
+												<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+													<B>Registered Member Account :: Forum and Comment Signature</B>
+												<HR ALIGN=\"LEFT\" WIDTH=\"30%\">
+													<B><BIG>&quot;</BIG></B>&nbsp;&nbsp;<I>$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_SIGNATURE</I>&nbsp;&nbsp;<B><BIG>&quot;</BIG></B>
 ");
 
 /*
@@ -992,7 +996,7 @@ if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL >= "5") {
 if (!$_Application_Module_Member_Profile_SERVICES_COMMAND_RECEIVE) {
 
 echo ("
-													This Registered Member Account Is Services Root-Administration Level. Send Command Now ?<BR>
+													<BR><BR><B>This Registered Member Account Is Services Root-Administration Level. Send Command Now ?</B><BR>
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" METHOD=\"POST\">
 														<SELECT NAME=\"AMM_Profile_Services_Command_Type\">
 															<OPTION VALUE=\"0\">Integrity :: Flash :: Server :: Local</OPTION>
@@ -1116,7 +1120,7 @@ echo ("
 												&nbsp;*&nbsp;Gender: $_Application_Module_Member_Profile_LIST_MEMBER_GENDER_DISPLAY<BR>
 												&nbsp;*&nbsp;Member Preferred Language: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_LANGUAGE<BR>
 												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Registered Member Account Profile Image :: $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\">$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY</A><BR>
-												&nbsp;*&nbsp;Member Account Avatar Image: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR><BR>
+												&nbsp;*&nbsp;Member Account Avatar Image: <A HREF=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon_Avatar/$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR><BR>
 
 												<I>Member' Account Details :: Social :: Preferences</I><HR WIDTH=\"50%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Member Marital Status: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIAL_PREFERENCE_MARITAL_STATUS_DISPLAY<BR>
@@ -1150,7 +1154,7 @@ echo ("
 												&nbsp;*&nbsp;Gender: $_Application_Module_Member_Profile_LIST_MEMBER_GENDER_DISPLAY<BR>
 												&nbsp;*&nbsp;Member Preferred Language: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_LANGUAGE<BR>
 												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Registered Member Account Profile Image :: $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\">$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY</A><BR>
-												&nbsp;*&nbsp;Member Account Avatar Image: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR><BR>
+												&nbsp;*&nbsp;Member Account Avatar Image: <A HREF=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon_Avatar/$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR><BR>
 
 												<I>Member' Account Details :: Social :: Preferences</I><HR WIDTH=\"50%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Member Marital Status: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIAL_PREFERENCE_MARITAL_STATUS_DISPLAY<BR>
@@ -1234,7 +1238,7 @@ echo ("
 												Location :: Last-Known :: Given<HR WIDTH=\"25%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Location :: Current Given Area: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_AREA<BR>
 												&nbsp;*&nbsp;Location :: Current Given Region: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_REGION<BR>
-												&nbsp;*&nbsp;Location :: Current Given Time-Zone, UTC: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Map :: World Map :: Time-Zone ::\" TARGET=\"_NEW\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE</A><BR><BR>
+												&nbsp;*&nbsp;Location :: Current Given Time-Zone, UTC: <A HREF=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Map :: World Map :: Time-Zone ::\" TARGET=\"_NEW\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE</A><BR><BR>
 
 												Location :: Last-Known :: Device-Reported :: Area, Region and Time-Zone<HR WIDTH=\"25%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Area: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Area ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_AREA</A><BR>
@@ -1287,7 +1291,7 @@ echo ("
 												Location :: Last-Known :: Given<HR WIDTH=\"25%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Location :: Current Given Area: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_AREA<BR>
 												&nbsp;*&nbsp;Location :: Current Given Region: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_REGION<BR>
-												&nbsp;*&nbsp;Location :: Current Given Time-Zone: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_INTERNALFILE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Map :: World Map :: Time-Zone ::\" TARGET=\"_NEW\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE</A><BR><BR>
+												&nbsp;*&nbsp;Location :: Current Given Time-Zone: <A HREF=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_INTERNALFILE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Map :: World Map :: Time-Zone ::\" TARGET=\"_NEW\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE</A><BR><BR>
 
 												Location :: Last-Known :: Device-Reported :: Area, Region and Time-Zone<HR WIDTH=\"25%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Area: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Area ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_AREA</A><BR>
@@ -1352,7 +1356,7 @@ echo ("
 												Location :: Last-Known :: Given<HR WIDTH=\"25%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Location :: Current Given Area: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_AREA<BR>
 												&nbsp;*&nbsp;Location :: Current Given Region: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_REGION<BR>
-												&nbsp;*&nbsp;Location :: Current Given Time-Zone: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_INTERNALFILE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Map :: World Map :: Time-Zone ::\" TARGET=\"_NEW\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE</A><BR><BR>
+												&nbsp;*&nbsp;Location :: Current Given Time-Zone: <A HREF=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Extras/Maps/TimeZone/WorldMap_TimeZone.png?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_INTERNALFILE_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Map :: World Map :: Time-Zone ::\" TARGET=\"_NEW\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE</A><BR><BR>
 
 												Location :: Last-Known :: Device-Reported :: Area, Region and Time-Zone<HR WIDTH=\"25%\" ALIGN=\"LEFT\">
 												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Area: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Area ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_AREA</A><BR>
@@ -1784,7 +1788,7 @@ echo ("
 												&nbsp;*&nbsp;Experience Amount: $_Application_Module_Member_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT<BR>
 												&nbsp;*&nbsp;Rank Level: $_Application_Module_Member_Profile_LIST_MEMBER_RANK_LEVEL<BR>
 												&nbsp;*&nbsp;Total Number of Posts System-Wide: $_Application_Module_Member_Profile_LIST_MEMBER_NUMBER_OF_POSTS<BR>
-												&nbsp;*&nbsp;Favorite Theme: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_THEME_DIRECTORY<BR><BR>
+												&nbsp;*&nbsp;Favorite Theme: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_DIRECTORY_THEME<BR><BR>
 
 												<B>Digital Social Media Networks, Digital Communications Networks</B><HR><BR>
 
@@ -3092,7 +3096,7 @@ if ($_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_
 **/
 } else {
 
-echo ("<A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Gallery/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_DOCUMENT_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Media Gallery :: Document :: Album :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT :: File :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM :: For :: This Registered Member Account :: \" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Icon_Member/Icon_Profile_Account_Data_Document_Gallery_File.png\" WIDTH=\"50\" HEIGHT=\"50\"></IMG></A>&nbsp;&nbsp;&nbsp;");
+echo ("<A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Gallery/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_DOCUMENT_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Media Gallery :: Document :: Album :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT :: File :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM :: For :: This Registered Member Account :: \" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon_Member/Icon_Profile_Account_Data_Document_Gallery_File.png\" WIDTH=\"50\" HEIGHT=\"50\"></IMG></A>&nbsp;&nbsp;&nbsp;");
 
 } // [ + ] IF: STOP: Remote-File-Inclusion AND Local-File-Inclusion
 
@@ -3151,7 +3155,7 @@ if ($_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT 
 **/
 } else {
 
-echo ("<A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Gallery/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_DOCUMENT_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Media Gallery :: Document :: Album :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT :: File :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM :: For :: This Registered Member Account :: \" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Icon_Member/Icon_Profile_Account_Data_Document_Gallery_File.png\" WIDTH=\"50\" HEIGHT=\"50\"></IMG></A>&nbsp;&nbsp;&nbsp;");
+echo ("<A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Gallery/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_DOCUMENT_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Media Gallery :: Document :: Album :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT :: File :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM :: For :: This Registered Member Account :: \" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon_Member/Icon_Profile_Account_Data_Document_Gallery_File.png\" WIDTH=\"50\" HEIGHT=\"50\"></IMG></A>&nbsp;&nbsp;&nbsp;");
 
 } // [ + ] IF: STOP: Exploit :: Remote-File-Inclusion AND Local-File-Inclusion
 
@@ -3216,7 +3220,7 @@ if ($_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT 
 **/
 } else {
 
-echo ("<A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Gallery/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_DOCUMENT_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Media Gallery :: Document :: Album :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT :: File :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM :: For :: This Registered Member Account :: \" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Icon_Member/Icon_Profile_Account_Data_Document_Gallery_File.png\" WIDTH=\"50\" HEIGHT=\"50\"></IMG></A>&nbsp;&nbsp;&nbsp;");
+echo ("<A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Gallery/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT/$_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_DOCUMENT_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Media Gallery :: Document :: Album :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT :: File :: $_Application_Module_Member_Profile_Gallery_READ_DIRECTORY_GALLERY_DOCUMENT_ALBUM :: For :: This Registered Member Account :: \" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_SETTINGS_DIRECTORY_THEME_VIDEO_RESOLUTION/$_GLOBAL_MEMBER_SETTINGS_DIRECTORY_THEME/Image/Icon_Member/Icon_Profile_Account_Data_Document_Gallery_File.png\" WIDTH=\"50\" HEIGHT=\"50\"></IMG></A>&nbsp;&nbsp;&nbsp;");
 
 } // [ + ] IF: STOP: Exploit :: Remote-File-Inclusion AND Local-File-Inclusion
 
